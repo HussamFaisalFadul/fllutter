@@ -21,6 +21,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
+
     :root {
       --bg: #f7f5f0;
       --surface: #ffffff;
@@ -42,42 +43,53 @@
       --max-width: 1180px;
     }
 
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       background: var(--bg);
       color: var(--text);
+
       font-family: "DM Sans", sans-serif;
+
       line-height: 1.6;
+
       overflow-x: hidden;
     }
+
 
     body.ar {
       font-family: "Noto Naskh Arabic", sans-serif;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
+
     img {
       max-width: 100%;
       display: block;
     }
 
+
     .container {
       width: min(var(--max-width), calc(100% - 40px));
       margin: auto;
     }
+
 
     /* =========================
        NAVIGATION
@@ -85,67 +97,92 @@
 
     nav {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
+
       z-index: 1000;
 
       background: rgba(247, 245, 240, 0.88);
+
       backdrop-filter: blur(16px);
 
       border-bottom: 1px solid rgba(222, 219, 211, 0.8);
     }
 
+
     .nav-inner {
       height: 76px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
+
     .logo {
       font-family: "DM Serif Display", serif;
+
       font-size: 25px;
+
       color: var(--primary);
     }
 
+
     .nav-links {
       display: flex;
+
       align-items: center;
+
       gap: 28px;
     }
 
+
     .nav-links a {
       color: var(--muted);
+
       font-size: 14px;
+
       font-weight: 600;
 
       transition: 0.25s ease;
     }
 
+
     .nav-links a:hover {
       color: var(--primary);
     }
 
+
     .nav-actions {
       display: flex;
+
       align-items: center;
+
       gap: 10px;
     }
+
 
     .lang-btn,
     .menu-btn {
       border: 1px solid var(--line);
+
       background: var(--surface);
 
       height: 40px;
+
       padding: 0 14px;
 
       border-radius: 999px;
 
       cursor: pointer;
+
       font-family: inherit;
+
       font-weight: 700;
 
       color: var(--text);
@@ -153,17 +190,23 @@
       transition: 0.25s ease;
     }
 
+
     .lang-btn:hover,
     .menu-btn:hover {
       border-color: var(--primary);
+
       color: var(--primary);
     }
 
+
     .menu-btn {
       display: none;
+
       width: 42px;
+
       padding: 0;
     }
+
 
     /* =========================
        HERO
@@ -173,16 +216,21 @@
       min-height: 100vh;
 
       display: flex;
+
       align-items: center;
 
-      padding-top: 100px;
+      padding-top: 115px;
+      padding-bottom: 70px;
+
       position: relative;
     }
+
 
     .hero::before {
       content: "";
 
       position: absolute;
+
       width: 480px;
       height: 480px;
 
@@ -198,56 +246,98 @@
       pointer-events: none;
     }
 
+
     .hero-grid {
       display: grid;
+
       grid-template-columns: 1.2fr 0.8fr;
+
       gap: 80px;
 
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
 
-      color: var(--primary);
-      font-size: 14px;
-      font-weight: 700;
+    /* IMPORTANT:
+       Keeps the top label clearly separated
+       from the main heading.
+    */
 
-      margin-bottom: 22px;
+    .hero-content {
+      position: relative;
+
+      z-index: 2;
+
+      padding-top: 15px;
     }
 
-    .eyebrow span {
+
+    .eyebrow {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--primary);
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      line-height: 1.6;
+
+      margin-bottom: 32px;
+
+      min-height: 25px;
+    }
+
+
+    .eyebrow > span:first-child {
+      flex: 0 0 8px;
+
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
 
       background: var(--accent);
     }
 
+
+    .eyebrow .en-text,
+    .eyebrow .ar-text {
+      line-height: 1.7;
+    }
+
+
     .hero h1 {
       font-family: "DM Serif Display", serif;
 
-      font-size: clamp(52px, 7vw, 88px);
-      line-height: 0.98;
+      font-size: clamp(50px, 6.6vw, 82px);
+
+      line-height: 1.06;
 
       letter-spacing: -2px;
 
       max-width: 800px;
 
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
+
 
     .hero h1 em {
       color: var(--primary);
+
       font-style: normal;
     }
+
 
     .hero-description {
       color: var(--muted);
 
       font-size: 18px;
+
       line-height: 1.8;
 
       max-width: 680px;
@@ -255,16 +345,23 @@
       margin-bottom: 34px;
     }
 
+
     .hero-buttons {
       display: flex;
+
       gap: 12px;
+
       flex-wrap: wrap;
     }
 
+
     .btn {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 9px;
 
       padding: 13px 21px;
@@ -272,45 +369,64 @@
       border-radius: 999px;
 
       font-size: 14px;
+
       font-weight: 700;
 
       transition: 0.25s ease;
     }
 
+
     .btn-primary {
       background: var(--primary);
+
       color: white;
     }
 
+
     .btn-primary:hover {
       background: var(--primary-dark);
+
       transform: translateY(-2px);
     }
+
 
     .btn-secondary {
       border: 1px solid var(--line);
+
       background: var(--surface);
     }
 
+
     .btn-secondary:hover {
       border-color: var(--primary);
+
       color: var(--primary);
+
       transform: translateY(-2px);
     }
 
-    /* Hero visual */
+
+    /* =========================
+       HERO VISUAL
+    ========================= */
 
     .hero-visual {
       position: relative;
+
       display: flex;
+
       justify-content: center;
+
+      z-index: 2;
     }
+
 
     .device {
       width: 285px;
       height: 565px;
 
       border: 9px solid #1b2025;
+
       border-radius: 43px;
 
       background: #11181c;
@@ -323,6 +439,7 @@
 
       transform: rotate(3deg);
     }
+
 
     .device::before {
       content: "";
@@ -344,65 +461,93 @@
       z-index: 3;
     }
 
+
     .screen {
       position: absolute;
+
       inset: 8px;
 
       border-radius: 34px;
+
       overflow: hidden;
 
       background:
-        linear-gradient(150deg, #176b87 0%, #0d4d61 45%, #092e3b 100%);
+        linear-gradient(
+          150deg,
+          #176b87 0%,
+          #0d4d61 45%,
+          #092e3b 100%
+        );
 
       color: white;
+
       padding: 55px 22px 25px;
     }
 
+
     .screen-top {
       font-size: 12px;
+
       opacity: 0.75;
+
       margin-bottom: 35px;
     }
 
+
     .screen-title {
       font-size: 30px;
+
       font-weight: 700;
+
       line-height: 1.15;
 
       margin-bottom: 12px;
     }
 
+
     .screen-sub {
       font-size: 12px;
+
       opacity: 0.72;
+
       margin-bottom: 30px;
     }
 
+
     .screen-card {
       background: rgba(255,255,255,0.11);
+
       border: 1px solid rgba(255,255,255,0.13);
 
       padding: 15px;
+
       border-radius: 17px;
 
       margin-bottom: 12px;
     }
 
+
     .screen-card strong {
       display: block;
+
       font-size: 13px;
+
       margin-bottom: 4px;
     }
 
+
     .screen-card span {
       font-size: 10px;
+
       opacity: 0.7;
     }
+
 
     .floating-badge {
       position: absolute;
 
       background: white;
+
       border: 1px solid var(--line);
 
       padding: 12px 15px;
@@ -412,20 +557,30 @@
       box-shadow: var(--shadow);
 
       font-size: 12px;
+
       font-weight: 700;
+
+      z-index: 4;
     }
+
 
     .badge-flutter {
       left: -35px;
+
       top: 100px;
+
       color: var(--primary);
     }
 
+
     .badge-ai {
       right: -35px;
+
       bottom: 130px;
+
       color: var(--accent);
     }
+
 
     /* =========================
        SECTION
@@ -435,9 +590,12 @@
       padding: 110px 0;
     }
 
+
     .section-head {
       display: flex;
+
       align-items: end;
+
       justify-content: space-between;
 
       gap: 30px;
@@ -445,24 +603,33 @@
       margin-bottom: 48px;
     }
 
+
     .section-number {
       color: var(--accent);
+
       font-size: 13px;
+
       font-weight: 700;
+
       margin-bottom: 10px;
     }
+
 
     .section-title {
       font-family: "DM Serif Display", serif;
 
       font-size: clamp(38px, 5vw, 58px);
+
       line-height: 1;
     }
 
+
     .section-description {
       color: var(--muted);
+
       max-width: 480px;
     }
+
 
     /* =========================
        ABOUT
@@ -470,31 +637,41 @@
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 0.9fr 1.1fr;
+
       gap: 70px;
 
       align-items: start;
     }
 
+
     .about-large {
       font-family: "DM Serif Display", serif;
 
       font-size: 35px;
+
       line-height: 1.25;
     }
 
+
     .about-text {
       color: var(--muted);
+
       font-size: 16px;
+
       line-height: 1.9;
     }
+
 
     .about-text p + p {
       margin-top: 20px;
     }
 
+
     .stats {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
 
       gap: 14px;
@@ -502,28 +679,35 @@
       margin-top: 35px;
     }
 
+
     .stat {
       padding: 20px;
 
       background: var(--surface);
+
       border: 1px solid var(--line);
 
       border-radius: var(--radius-md);
     }
 
+
     .stat strong {
       display: block;
 
       font-family: "DM Serif Display", serif;
+
       font-size: 32px;
 
       color: var(--primary);
     }
 
+
     .stat span {
       color: var(--muted);
+
       font-size: 12px;
     }
+
 
     /* =========================
        SKILLS
@@ -531,10 +715,12 @@
 
     .skills-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
 
       gap: 16px;
     }
+
 
     .skill-card {
       background: var(--surface);
@@ -548,12 +734,15 @@
       transition: 0.3s ease;
     }
 
+
     .skill-card:hover {
       transform: translateY(-6px);
+
       box-shadow: var(--shadow);
 
       border-color: rgba(23,107,135,0.3);
     }
+
 
     .skill-icon {
       width: 48px;
@@ -562,7 +751,9 @@
       border-radius: 14px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       background: var(--surface-2);
@@ -574,24 +765,33 @@
       margin-bottom: 20px;
     }
 
+
     .skill-card h3 {
       font-size: 18px;
+
       margin-bottom: 10px;
     }
 
+
     .skill-card p {
       color: var(--muted);
+
       font-size: 14px;
+
       line-height: 1.7;
     }
 
+
     .tags {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 7px;
 
       margin-top: 17px;
     }
+
 
     .tag {
       padding: 6px 9px;
@@ -603,8 +803,10 @@
       color: var(--muted);
 
       font-size: 11px;
+
       font-weight: 600;
     }
+
 
     /* =========================
        PROJECTS
@@ -612,11 +814,14 @@
 
     .projects {
       display: grid;
+
       gap: 22px;
     }
 
+
     .project {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       background: var(--surface);
@@ -632,26 +837,34 @@
       transition: 0.3s ease;
     }
 
+
     .project:hover {
       box-shadow: var(--shadow);
+
       transform: translateY(-4px);
     }
+
 
     .project:nth-child(even) {
       direction: rtl;
     }
 
+
     .project:nth-child(even) .project-content {
       direction: ltr;
+
       text-align: left;
     }
+
 
     .project-visual {
       background:
         linear-gradient(145deg, #e8f1f3, #dce9ec);
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       padding: 40px;
@@ -659,26 +872,31 @@
       min-height: 390px;
     }
 
+
     .project:nth-child(2) .project-visual {
       background:
         linear-gradient(145deg, #f2e8dc, #eee0cf);
     }
+
 
     .project:nth-child(3) .project-visual {
       background:
         linear-gradient(145deg, #e6ebe7, #dfe7e1);
     }
 
+
     .project:nth-child(4) .project-visual {
       background:
         linear-gradient(145deg, #e9e7ef, #dedce7);
     }
+
 
     .project-device {
       width: 170px;
       height: 300px;
 
       border: 6px solid #1e2529;
+
       border-radius: 27px;
 
       background: var(--primary);
@@ -690,6 +908,7 @@
       transform: rotate(-5deg);
     }
 
+
     .project-device-inner {
       width: 100%;
       height: 100%;
@@ -700,7 +919,9 @@
         linear-gradient(160deg, #176b87, #092e3b);
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       color: white;
@@ -708,49 +929,63 @@
       font-size: 35px;
     }
 
+
     .project-content {
       padding: 42px;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
     }
+
 
     .project-label {
       color: var(--accent);
 
       font-size: 12px;
+
       font-weight: 700;
 
       margin-bottom: 13px;
     }
 
+
     .project h3 {
       font-family: "DM Serif Display", serif;
 
       font-size: 36px;
+
       line-height: 1.1;
 
       margin-bottom: 14px;
     }
 
+
     .project p {
       color: var(--muted);
 
       font-size: 14px;
+
       line-height: 1.8;
 
       max-width: 500px;
     }
 
+
     .project-stack {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 7px;
 
       margin-top: 20px;
+
       margin-bottom: 23px;
     }
+
 
     .project-stack span {
       padding: 6px 10px;
@@ -762,23 +997,30 @@
       color: var(--muted);
 
       font-size: 11px;
+
       font-weight: 600;
     }
 
+
     .project-link {
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
 
       color: var(--primary);
 
       font-size: 13px;
+
       font-weight: 700;
     }
+
 
     .project-link:hover {
       text-decoration: underline;
     }
+
 
     /* =========================
        EXPERIENCE
@@ -787,6 +1029,7 @@
     .timeline {
       border-top: 1px solid var(--line);
     }
+
 
     .timeline-item {
       display: grid;
@@ -800,33 +1043,42 @@
       border-bottom: 1px solid var(--line);
     }
 
+
     .timeline-date {
       color: var(--accent);
 
       font-size: 13px;
+
       font-weight: 700;
     }
 
+
     .timeline-content h3 {
       font-size: 20px;
+
       margin-bottom: 5px;
     }
+
 
     .timeline-content h4 {
       color: var(--primary);
 
       font-size: 13px;
+
       font-weight: 600;
 
       margin-bottom: 10px;
     }
 
+
     .timeline-content p {
       color: var(--muted);
 
       font-size: 14px;
+
       line-height: 1.8;
     }
+
 
     /* =========================
        EDUCATION
@@ -834,10 +1086,12 @@
 
     .education-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       gap: 18px;
     }
+
 
     .education-card {
       padding: 30px;
@@ -849,10 +1103,13 @@
       border-radius: var(--radius-lg);
     }
 
+
     .education-card small {
       color: var(--accent);
+
       font-weight: 700;
     }
+
 
     .education-card h3 {
       font-family: "DM Serif Display", serif;
@@ -862,10 +1119,13 @@
       margin: 10px 0;
     }
 
+
     .education-card p {
       color: var(--muted);
+
       font-size: 14px;
     }
+
 
     /* =========================
        CONTACT
@@ -873,12 +1133,14 @@
 
     .contact {
       background: var(--text);
+
       color: white;
 
       border-radius: 35px;
 
       padding: 70px;
     }
+
 
     .contact-grid {
       display: grid;
@@ -890,14 +1152,17 @@
       align-items: center;
     }
 
+
     .contact h2 {
       font-family: "DM Serif Display", serif;
 
       font-size: clamp(40px, 5vw, 65px);
 
       line-height: 1;
+
       margin-bottom: 20px;
     }
+
 
     .contact p {
       color: rgba(255,255,255,0.65);
@@ -905,14 +1170,19 @@
       max-width: 520px;
     }
 
+
     .contact-links {
       display: grid;
+
       gap: 12px;
     }
 
+
     .contact-link {
       display: flex;
+
       align-items: center;
+
       gap: 14px;
 
       padding: 16px 18px;
@@ -924,19 +1194,25 @@
       transition: 0.25s ease;
     }
 
+
     .contact-link:hover {
       background: rgba(255,255,255,0.06);
+
       border-color: rgba(255,255,255,0.3);
     }
 
+
     .contact-link i {
       width: 25px;
+
       color: #8fc2d1;
     }
+
 
     .contact-link span {
       font-size: 13px;
     }
+
 
     /* =========================
        FOOTER
@@ -950,25 +1226,33 @@
       font-size: 12px;
     }
 
+
     .footer-inner {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
     }
 
+
     .socials {
       display: flex;
+
       gap: 10px;
     }
+
 
     .socials a {
       width: 36px;
       height: 36px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border: 1px solid var(--line);
@@ -978,10 +1262,13 @@
       transition: 0.25s ease;
     }
 
+
     .socials a:hover {
       color: var(--primary);
+
       border-color: var(--primary);
     }
+
 
     /* =========================
        LANGUAGE
@@ -991,17 +1278,21 @@
       display: none;
     }
 
+
     body.ar .en-text {
       display: none;
     }
+
 
     body.ar .ar-text {
       display: inline;
     }
 
+
     body.ar .nav-links {
       direction: rtl;
     }
+
 
     body.ar .hero-grid,
     body.ar .about-grid,
@@ -1013,10 +1304,12 @@
       direction: rtl;
     }
 
+
     body.ar .hero,
     body.ar section {
       text-align: right;
     }
+
 
     body.ar .hero-buttons,
     body.ar .tags,
@@ -1024,14 +1317,35 @@
       direction: rtl;
     }
 
+
+    body.ar .eyebrow {
+      direction: rtl;
+      justify-content: flex-start;
+    }
+
+
+    body.ar .hero h1 {
+      letter-spacing: 0;
+      line-height: 1.25;
+    }
+
+
+    body.ar .hero-description {
+      line-height: 2;
+    }
+
+
     body.ar .project:nth-child(even) {
       direction: ltr;
     }
 
+
     body.ar .project:nth-child(even) .project-content {
       direction: rtl;
+
       text-align: right;
     }
+
 
     /* =========================
        REVEAL ANIMATION
@@ -1039,6 +1353,7 @@
 
     .reveal {
       opacity: 0;
+
       transform: translateY(25px);
 
       transition:
@@ -1046,16 +1361,20 @@
         transform 0.7s ease;
     }
 
+
     .reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
+
 
     /* =========================
        PRINT
     ========================= */
 
     @media print {
+
       nav,
       .hero-buttons,
       .lang-btn,
@@ -1065,19 +1384,25 @@
         display: none !important;
       }
 
+
       body {
         background: white;
       }
 
+
       section {
         padding: 40px 0;
+
         page-break-inside: avoid;
       }
 
+
       .hero {
         min-height: auto;
+
         padding-top: 30px;
       }
+
 
       .hero-grid,
       .about-grid,
@@ -1085,28 +1410,36 @@
         grid-template-columns: 1fr;
       }
 
+
       .hero-visual {
         display: none;
       }
+
 
       .project {
         page-break-inside: avoid;
       }
 
+
       .contact {
         background: white;
+
         color: var(--text);
+
         padding: 30px;
       }
+
 
       .contact p,
       .contact-link {
         color: var(--muted);
       }
+
     }
 
+
     /* =========================
-       RESPONSIVE
+       TABLET
     ========================= */
 
     @media (max-width: 900px) {
@@ -1117,7 +1450,9 @@
         position: absolute;
 
         top: 76px;
+
         left: 20px;
+
         right: 20px;
 
         padding: 20px;
@@ -1125,59 +1460,93 @@
         background: var(--surface);
 
         border: 1px solid var(--line);
+
         border-radius: 20px;
 
         box-shadow: var(--shadow);
 
         flex-direction: column;
+
         align-items: stretch;
       }
+
 
       .nav-links.active {
         display: flex;
       }
 
+
       .nav-links a {
         padding: 8px;
       }
+
 
       .menu-btn {
         display: block;
       }
 
-      .hero-grid {
-        grid-template-columns: 1fr;
+
+      .hero {
+        padding-top: 125px;
+
+        padding-bottom: 60px;
       }
 
-      .hero-visual {
-        margin-top: 30px;
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
       }
+
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+
+      .hero-visual {
+        margin-top: 15px;
+      }
+
 
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
+
       .about-grid {
         grid-template-columns: 1fr;
       }
+
 
       .project {
         grid-template-columns: 1fr;
       }
 
+
       .project:nth-child(even) {
         direction: ltr;
       }
 
+
       .project:nth-child(even) .project-content {
         direction: ltr;
+
         text-align: left;
       }
+
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
     }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -1185,40 +1554,101 @@
         width: min(100% - 28px, var(--max-width));
       }
 
+
       section {
         padding: 75px 0;
       }
 
+
       .hero {
-        padding-top: 110px;
+        min-height: auto;
+
+        padding-top: 120px;
+
+        padding-bottom: 60px;
       }
 
-      .hero h1 {
-        font-size: 53px;
-        letter-spacing: -1px;
+
+      .hero-grid {
+        gap: 45px;
       }
+
+
+      .hero-content {
+        padding-top: 5px;
+      }
+
+
+      .eyebrow {
+        font-size: 13px;
+
+        gap: 8px;
+
+        margin-bottom: 28px;
+
+        max-width: 100%;
+
+        line-height: 1.7;
+      }
+
+
+      .hero h1 {
+        font-size: 48px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 25px;
+      }
+
 
       .hero-description {
         font-size: 16px;
+
+        line-height: 1.85;
+
+        margin-bottom: 28px;
       }
+
+
+      body.ar .hero h1 {
+        font-size: 47px;
+
+        line-height: 1.3;
+
+        letter-spacing: 0;
+      }
+
+
+      body.ar .hero-description {
+        line-height: 2;
+      }
+
 
       .device {
         width: 245px;
+
         height: 485px;
       }
 
+
       .floating-badge {
         font-size: 10px;
+
         padding: 9px 11px;
       }
+
 
       .badge-flutter {
         left: -5px;
       }
 
+
       .badge-ai {
         right: -5px;
       }
+
 
       .skills-grid,
       .education-grid,
@@ -1226,52 +1656,69 @@
         grid-template-columns: 1fr;
       }
 
+
       .section-head {
         display: block;
       }
+
 
       .section-description {
         margin-top: 18px;
       }
 
+
       .project-content {
         padding: 28px;
       }
+
 
       .project h3 {
         font-size: 30px;
       }
 
+
       .project-visual {
         min-height: 320px;
       }
 
+
       .timeline-item {
         grid-template-columns: 1fr;
+
         gap: 8px;
       }
 
+
       .contact {
         padding: 35px 25px;
+
         border-radius: 25px;
       }
 
+
       .footer-inner {
         flex-direction: column;
+
         align-items: flex-start;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
 <nav>
+
   <div class="container nav-inner">
 
     <a href="#home" class="logo">
       HF.
     </a>
+
 
     <div class="nav-links" id="navLinks">
 
@@ -1280,20 +1727,24 @@
         <span class="ar-text">نبذة</span>
       </a>
 
+
       <a href="#skills">
         <span class="en-text">Skills</span>
         <span class="ar-text">المهارات</span>
       </a>
+
 
       <a href="#projects">
         <span class="en-text">Projects</span>
         <span class="ar-text">المشاريع</span>
       </a>
 
+
       <a href="#experience">
         <span class="en-text">Experience</span>
         <span class="ar-text">الخبرة</span>
       </a>
+
 
       <a href="#contact">
         <span class="en-text">Contact</span>
@@ -1302,32 +1753,46 @@
 
     </div>
 
+
     <div class="nav-actions">
 
       <button class="lang-btn" onclick="toggleLanguage()">
 
         <span class="en-text">العربية</span>
+
         <span class="ar-text">English</span>
 
       </button>
 
+
       <button class="menu-btn" onclick="toggleMenu()">
+
         <i class="fa-solid fa-bars"></i>
+
       </button>
 
     </div>
 
   </div>
+
 </nav>
 
 
+
 <main id="home">
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
   <div class="container hero-grid">
 
-    <div class="reveal">
+
+    <div class="hero-content reveal">
+
 
       <div class="eyebrow">
 
@@ -1343,6 +1808,7 @@
 
       </div>
 
+
       <h1>
 
         <span class="en-text">
@@ -1355,6 +1821,7 @@
 
       </h1>
 
+
       <p class="hero-description">
 
         <span class="en-text">
@@ -1362,6 +1829,7 @@
           mobile applications, AI integration, local databases, APIs,
           and computer vision — with a strong full-stack background.
         </span>
+
 
         <span class="ar-text">
           مطور Flutter متخصص في بناء تطبيقات جوال جاهزة للاستخدام
@@ -1372,24 +1840,36 @@
 
       </p>
 
+
       <div class="hero-buttons">
 
         <a href="#projects" class="btn btn-primary">
 
-          <span class="en-text">View Projects</span>
-          <span class="ar-text">شاهد المشاريع</span>
+          <span class="en-text">
+            View Projects
+          </span>
+
+          <span class="ar-text">
+            شاهد المشاريع
+          </span>
 
           <i class="fa-solid fa-arrow-down"></i>
 
         </a>
+
 
         <a href="mailto:Hussam.fisal@gmail.com"
            class="btn btn-secondary">
 
           <i class="fa-regular fa-envelope"></i>
 
-          <span class="en-text">Get in touch</span>
-          <span class="ar-text">تواصل معي</span>
+          <span class="en-text">
+            Get in touch
+          </span>
+
+          <span class="ar-text">
+            تواصل معي
+          </span>
 
         </a>
 
@@ -1398,25 +1878,37 @@
     </div>
 
 
+
     <div class="hero-visual reveal">
 
+
       <div class="floating-badge badge-flutter">
+
         <i class="fa-solid fa-mobile-screen"></i>
+
         Flutter / Dart
+
       </div>
 
+
       <div class="floating-badge badge-ai">
+
         <i class="fa-solid fa-brain"></i>
+
         AI + CV
+
       </div>
+
 
       <div class="device">
 
         <div class="screen">
 
+
           <div class="screen-top">
             FLUTTER · MOBILE
           </div>
+
 
           <div class="screen-title">
             Build.<br>
@@ -1424,11 +1916,14 @@
             Solve.
           </div>
 
+
           <div class="screen-sub">
             Offline-first mobile applications
           </div>
 
+
           <div class="screen-card">
+
             <strong>
               Local Data
             </strong>
@@ -1436,9 +1931,12 @@
             <span>
               SQLite · Offline-first
             </span>
+
           </div>
 
+
           <div class="screen-card">
+
             <strong>
               AI Integration
             </strong>
@@ -1446,9 +1944,12 @@
             <span>
               RAG · LLM · APIs
             </span>
+
           </div>
 
+
           <div class="screen-card">
+
             <strong>
               Computer Vision
             </strong>
@@ -1456,6 +1957,7 @@
             <span>
               Camera · OpenCV · ORB
             </span>
+
           </div>
 
         </div>
@@ -1469,9 +1971,15 @@
 </section>
 
 
+
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
 
   <div class="container">
+
 
     <div class="section-head reveal">
 
@@ -1480,6 +1988,7 @@
         <div class="section-number">
           01 — ABOUT
         </div>
+
 
         <h2 class="section-title">
 
@@ -1494,6 +2003,7 @@
         </h2>
 
       </div>
+
 
       <p class="section-description">
 
@@ -1514,7 +2024,9 @@
     </div>
 
 
+
     <div class="about-grid reveal">
+
 
       <div>
 
@@ -1535,7 +2047,9 @@
       </div>
 
 
+
       <div class="about-text">
+
 
         <p class="en-text">
           I work across mobile and backend technologies, with
@@ -1544,6 +2058,7 @@
           APIs, authentication, cloud services and device capabilities.
         </p>
 
+
         <p class="ar-text">
           أعمل في تطوير تطبيقات الجوال والأنظمة الخلفية، ويأتي
           Flutter وDart في مقدمة تقنيات التطوير التي أستخدمها.
@@ -1551,11 +2066,13 @@
           والمصادقة والخدمات السحابية وإمكانات الجهاز.
         </p>
 
+
         <p class="en-text">
           I also develop AI-powered systems using Python, FastAPI,
           LangChain, RAG and LLM technologies, and have worked on
           computer-vision solutions using camera-based image processing.
         </p>
+
 
         <p class="ar-text">
           كما أطور أنظمة تعتمد على الذكاء الاصطناعي باستخدام Python
@@ -1564,7 +2081,9 @@
         </p>
 
 
+
         <div class="stats">
+
 
           <div class="stat">
 
@@ -1610,6 +2129,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -1621,9 +2141,15 @@
 </section>
 
 
+
+<!-- =========================
+     SKILLS
+========================= -->
+
 <section id="skills">
 
   <div class="container">
+
 
     <div class="section-head reveal">
 
@@ -1632,6 +2158,7 @@
         <div class="section-number">
           02 — CORE STACK
         </div>
+
 
         <h2 class="section-title">
 
@@ -1646,6 +2173,7 @@
         </h2>
 
       </div>
+
 
       <p class="section-description">
 
@@ -1664,6 +2192,7 @@
     </div>
 
 
+
     <div class="skills-grid">
 
 
@@ -1673,30 +2202,37 @@
           <i class="fa-solid fa-mobile-screen-button"></i>
         </div>
 
+
         <h3>
           Flutter & Mobile
         </h3>
+
 
         <p class="en-text">
           Building cross-platform mobile applications with
           responsive interfaces and practical mobile architecture.
         </p>
 
+
         <p class="ar-text">
           بناء تطبيقات جوال متعددة المنصات بواجهات متجاوبة
           وبنية عملية.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">Flutter</span>
           <span class="tag">Dart</span>
           <span class="tag">Android</span>
           <span class="tag">SQLite</span>
           <span class="tag">Offline-first</span>
           <span class="tag">RTL</span>
+
         </div>
 
       </div>
+
 
 
       <div class="skill-card reveal">
@@ -1705,30 +2241,37 @@
           <i class="fa-solid fa-brain"></i>
         </div>
 
+
         <h3>
           AI & LLM
         </h3>
+
 
         <p class="en-text">
           Integrating AI into applications and building
           document-based RAG systems.
         </p>
 
+
         <p class="ar-text">
           دمج الذكاء الاصطناعي داخل التطبيقات وبناء أنظمة
           RAG تعتمد على المستندات.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">LangChain</span>
           <span class="tag">RAG</span>
           <span class="tag">LLM</span>
           <span class="tag">Ollama</span>
           <span class="tag">ChromaDB</span>
           <span class="tag">Prompt Engineering</span>
+
         </div>
 
       </div>
+
 
 
       <div class="skill-card reveal">
@@ -1737,30 +2280,37 @@
           <i class="fa-solid fa-server"></i>
         </div>
 
+
         <h3>
           Backend & APIs
         </h3>
+
 
         <p class="en-text">
           Designing APIs and backend services that connect
           mobile applications with data and business logic.
         </p>
 
+
         <p class="ar-text">
           تطوير واجهات API وخدمات Backend لربط تطبيقات الجوال
           بالبيانات ومنطق النظام.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">Node.js</span>
           <span class="tag">Express</span>
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
           <span class="tag">REST</span>
           <span class="tag">JWT</span>
+
         </div>
 
       </div>
+
 
 
       <div class="skill-card reveal">
@@ -1769,28 +2319,35 @@
           <i class="fa-solid fa-camera"></i>
         </div>
 
+
         <h3>
           Computer Vision
         </h3>
+
 
         <p class="en-text">
           Camera-based image processing and markerless
           feature matching for mobile applications.
         </p>
 
+
         <p class="ar-text">
           معالجة الصور من خلال الكاميرا والتعرف على الصور
           باستخدام مطابقة الخصائص.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">OpenCV</span>
           <span class="tag">ORB</span>
           <span class="tag">Image Processing</span>
           <span class="tag">Camera</span>
+
         </div>
 
       </div>
+
 
 
       <div class="skill-card reveal">
@@ -1799,29 +2356,36 @@
           <i class="fa-solid fa-database"></i>
         </div>
 
+
         <h3>
           Databases
         </h3>
+
 
         <p class="en-text">
           Working with both local mobile databases and
           server-side relational and NoSQL databases.
         </p>
 
+
         <p class="ar-text">
           العمل مع قواعد البيانات المحلية لتطبيقات الجوال
           وقواعد البيانات العلائقية وNoSQL.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">SQLite</span>
           <span class="tag">MySQL</span>
           <span class="tag">PostgreSQL</span>
           <span class="tag">MongoDB</span>
           <span class="tag">Firebase</span>
+
         </div>
 
       </div>
+
 
 
       <div class="skill-card reveal">
@@ -1830,27 +2394,33 @@
           <i class="fa-solid fa-code-branch"></i>
         </div>
 
+
         <h3>
           Tools & Deployment
         </h3>
+
 
         <p class="en-text">
           Version control, containers, deployment platforms
           and practical development workflows.
         </p>
 
+
         <p class="ar-text">
           إدارة الإصدارات والحاويات ومنصات النشر وسير العمل
           العملي في تطوير البرمجيات.
         </p>
 
+
         <div class="tags">
+
           <span class="tag">Git</span>
           <span class="tag">GitHub</span>
           <span class="tag">Docker</span>
           <span class="tag">Vercel</span>
           <span class="tag">Render</span>
           <span class="tag">GitHub Actions</span>
+
         </div>
 
       </div>
@@ -1862,9 +2432,15 @@
 </section>
 
 
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
 <section id="projects">
 
   <div class="container">
+
 
     <div class="section-head reveal">
 
@@ -1873,6 +2449,7 @@
         <div class="section-number">
           03 — SELECTED WORK
         </div>
+
 
         <h2 class="section-title">
 
@@ -1887,6 +2464,7 @@
         </h2>
 
       </div>
+
 
       <p class="section-description">
 
@@ -1905,6 +2483,7 @@
     </div>
 
 
+
     <div class="projects">
 
 
@@ -1912,12 +2491,15 @@
 
       <article class="project reveal">
 
+
         <div class="project-visual">
 
           <div class="project-device">
 
             <div class="project-device-inner">
+
               <i class="fa-solid fa-mosque"></i>
+
             </div>
 
           </div>
@@ -1925,15 +2507,19 @@
         </div>
 
 
+
         <div class="project-content">
+
 
           <div class="project-label">
             01 · PUBLISHED MOBILE APP
           </div>
 
+
           <h3>
             Wadeh
           </h3>
+
 
           <p class="en-text">
             A production Flutter Islamic application published
@@ -1943,6 +2529,7 @@
             prayer times, Qibla and quizzes.
           </p>
 
+
           <p class="ar-text">
             تطبيق إسلامي تم تطويره باستخدام Flutter ونشره على
             Google Play، مع الاعتماد على Offline-First وقاعدة
@@ -1950,15 +2537,17 @@
             ومواقيت الصلاة والقبلة والاختبارات وغيرها.
           </p>
 
+
           <div class="project-stack">
+
             <span>Flutter</span>
             <span>Dart</span>
             <span>SQLite</span>
             <span>Offline-first</span>
             <span>RTL</span>
+
           </div>
 
-          <!-- CORRECT GOOGLE PLAY LINK -->
 
           <a href="https://play.google.com/store/apps/details?id=com.hussam.azkar&pcampaignid=web_share"
              target="_blank"
@@ -1982,16 +2571,20 @@
       </article>
 
 
+
       <!-- PROJECT 2 -->
 
       <article class="project reveal">
+
 
         <div class="project-visual">
 
           <div class="project-device">
 
             <div class="project-device-inner">
+
               <i class="fa-solid fa-camera"></i>
+
             </div>
 
           </div>
@@ -1999,15 +2592,19 @@
         </div>
 
 
+
         <div class="project-content">
+
 
           <div class="project-label">
             02 · COMPUTER VISION
           </div>
 
+
           <h3>
             Page Recognition
           </h3>
+
 
           <p class="en-text">
             A Flutter-based camera application for recognizing
@@ -2016,18 +2613,22 @@
             rather than relying on a visual marker system.
           </p>
 
+
           <p class="ar-text">
             تطبيق Flutter يعتمد على الكاميرا للتعرف على الصفحات
             باستخدام خصائص الصور. يستخدم المشروع مطابقة
             ORB بدون علامات مرئية مع تقنيات معالجة الصور.
           </p>
 
+
           <div class="project-stack">
+
             <span>Flutter</span>
             <span>Dart</span>
             <span>OpenCV</span>
             <span>ORB</span>
             <span>Computer Vision</span>
+
           </div>
 
         </div>
@@ -2035,16 +2636,20 @@
       </article>
 
 
+
       <!-- PROJECT 3 -->
 
       <article class="project reveal">
+
 
         <div class="project-visual">
 
           <div class="project-device">
 
             <div class="project-device-inner">
+
               <i class="fa-solid fa-robot"></i>
+
             </div>
 
           </div>
@@ -2052,15 +2657,19 @@
         </div>
 
 
+
         <div class="project-content">
+
 
           <div class="project-label">
             03 · GENERATIVE AI
           </div>
 
+
           <h3>
             AI Research Assistant
           </h3>
+
 
           <p class="en-text">
             An Arabic-first AI research system that allows users
@@ -2069,6 +2678,7 @@
             processing, streaming responses and conversational history.
           </p>
 
+
           <p class="ar-text">
             نظام مساعد بحثي بالذكاء الاصطناعي يدعم العربية أولًا،
             يتيح رفع المستندات وطرح الأسئلة حول محتواها. يعتمد
@@ -2076,14 +2686,18 @@
             المتدفقة وسجل المحادثات.
           </p>
 
+
           <div class="project-stack">
+
             <span>Python</span>
             <span>FastAPI</span>
             <span>LangChain</span>
             <span>RAG</span>
             <span>ChromaDB</span>
             <span>Ollama</span>
+
           </div>
+
 
           <a href="https://github.com/HussamFaisalFadul/Ai-research-assistant"
              target="_blank"
@@ -2107,16 +2721,20 @@
       </article>
 
 
+
       <!-- PROJECT 4 -->
 
       <article class="project reveal">
+
 
         <div class="project-visual">
 
           <div class="project-device">
 
             <div class="project-device-inner">
+
               <i class="fa-solid fa-chart-line"></i>
+
             </div>
 
           </div>
@@ -2124,15 +2742,19 @@
         </div>
 
 
+
         <div class="project-content">
+
 
           <div class="project-label">
             04 · FULL-STACK
           </div>
 
+
           <h3>
             Store Dashboard
           </h3>
+
 
           <p class="en-text">
             A full-stack SaaS dashboard concept for store and
@@ -2141,18 +2763,22 @@
             insights.
           </p>
 
+
           <p class="ar-text">
             نظام SaaS متكامل لإدارة المتاجر والأعمال، يشمل
             المخزون والموردين ونقاط البيع وبنية متعددة المستأجرين
             مع إمكانات للتحليلات المدعومة بالذكاء الاصطناعي.
           </p>
 
+
           <div class="project-stack">
+
             <span>React</span>
             <span>Node.js</span>
             <span>PostgreSQL</span>
             <span>Socket.IO</span>
             <span>AI</span>
+
           </div>
 
         </div>
@@ -2166,9 +2792,15 @@
 </section>
 
 
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
 <section id="experience">
 
   <div class="container">
+
 
     <div class="section-head reveal">
 
@@ -2177,6 +2809,7 @@
         <div class="section-number">
           04 — EXPERIENCE
         </div>
+
 
         <h2 class="section-title">
 
@@ -2191,6 +2824,7 @@
         </h2>
 
       </div>
+
 
       <p class="section-description">
 
@@ -2209,6 +2843,7 @@
     </div>
 
 
+
     <div class="timeline">
 
 
@@ -2218,20 +2853,24 @@
           2026 — Present
         </div>
 
+
         <div class="timeline-content">
 
           <h3>
             Lecturer — Information Systems
           </h3>
 
+
           <h4>
             Islamic University of Minnesota · Distance Learning
           </h4>
+
 
           <p class="en-text">
             Teaching Information Systems and technology-related
             subjects in a distance-learning environment.
           </p>
+
 
           <p class="ar-text">
             تدريس نظم المعلومات والمواد التقنية في بيئة
@@ -2243,11 +2882,13 @@
       </div>
 
 
+
       <div class="timeline-item reveal">
 
         <div class="timeline-date">
           2018 — Present
         </div>
+
 
         <div class="timeline-content">
 
@@ -2255,15 +2896,18 @@
             Lecturer — Information Technology
           </h3>
 
+
           <h4>
             University of the Holy Quran and Islamic Sciences · Sudan
           </h4>
+
 
           <p class="en-text">
             Teaching IT and Information Systems subjects including
             Web Development, databases, computer principles and
             application development.
           </p>
+
 
           <p class="ar-text">
             تدريس مواد تقنية المعلومات ونظم المعلومات، بما في ذلك
@@ -2275,11 +2919,13 @@
       </div>
 
 
+
       <div class="timeline-item reveal">
 
         <div class="timeline-date">
           2019 — 2022
         </div>
+
 
         <div class="timeline-content">
 
@@ -2287,14 +2933,17 @@
             Part-time Lecturer
           </h3>
 
+
           <h4>
             Al-Neelain University · Future University · Al-Mogran
           </h4>
+
 
           <p class="en-text">
             Taught programming, web development, databases,
             multimedia and IT-related courses.
           </p>
+
 
           <p class="ar-text">
             تدريس البرمجة وتطوير الويب وقواعد البيانات والوسائط
@@ -2306,11 +2955,13 @@
       </div>
 
 
+
       <div class="timeline-item reveal">
 
         <div class="timeline-date">
           2015 — 2016
         </div>
+
 
         <div class="timeline-content">
 
@@ -2318,14 +2969,17 @@
             IT Technical Support Specialist
           </h3>
 
+
           <h4>
             Al-Droushab Specialist Hospital · Sudan
           </h4>
+
 
           <p class="en-text">
             Provided technical support and handled IT systems,
             troubleshooting and day-to-day technology operations.
           </p>
+
 
           <p class="ar-text">
             تقديم الدعم الفني وإدارة أنظمة تقنية المعلومات
@@ -2343,9 +2997,15 @@
 </section>
 
 
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
 <section>
 
   <div class="container">
+
 
     <div class="section-head reveal">
 
@@ -2354,6 +3014,7 @@
         <div class="section-number">
           05 — EDUCATION
         </div>
+
 
         <h2 class="section-title">
 
@@ -2372,7 +3033,9 @@
     </div>
 
 
+
     <div class="education-grid">
+
 
       <div class="education-card reveal">
 
@@ -2380,9 +3043,11 @@
           2015
         </small>
 
+
         <h3>
           Master of Information Technology
         </h3>
+
 
         <p>
           Al-Neelain University · Sudan
@@ -2391,15 +3056,18 @@
       </div>
 
 
+
       <div class="education-card reveal">
 
         <small>
           2012
         </small>
 
+
         <h3>
           Bachelor of Information Systems
         </h3>
+
 
         <p>
           International University of Africa · Sudan
@@ -2414,13 +3082,21 @@
 </section>
 
 
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact">
 
   <div class="container">
 
+
     <div class="contact reveal">
 
+
       <div class="contact-grid">
+
 
         <div>
 
@@ -2436,10 +3112,12 @@
 
           </h2>
 
+
           <p class="en-text">
             Open to Flutter, mobile development, AI integration,
             full-stack and technology opportunities.
           </p>
+
 
           <p class="ar-text">
             مهتم بفرص Flutter وتطوير تطبيقات الجوال ودمج الذكاء
@@ -2449,7 +3127,9 @@
         </div>
 
 
+
         <div class="contact-links">
+
 
           <a class="contact-link"
              href="mailto:Hussam.fisal@gmail.com">
@@ -2523,12 +3203,19 @@
 
 </section>
 
+
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
   <div class="container footer-inner">
+
 
     <div>
       © 2026 Hussam Faisal Fadul
@@ -2536,6 +3223,7 @@
 
 
     <div class="socials">
+
 
       <a href="https://github.com/HussamAbusara"
          target="_blank"
@@ -2546,6 +3234,7 @@
 
       </a>
 
+
       <a href="https://www.linkedin.com/in/hussamfaisalfadul/"
          target="_blank"
          rel="noopener"
@@ -2554,6 +3243,7 @@
         <i class="fa-brands fa-linkedin-in"></i>
 
       </a>
+
 
       <a href="mailto:Hussam.fisal@gmail.com"
          aria-label="Email">
@@ -2569,7 +3259,9 @@
 </footer>
 
 
+
 <script>
+
 
   /* =========================
      LANGUAGE
@@ -2617,11 +3309,13 @@
   const savedLanguage =
     localStorage.getItem("language");
 
+
   if (savedLanguage === "ar") {
 
     document.body.classList.add("ar");
 
     document.documentElement.lang = "ar";
+
     document.documentElement.dir = "rtl";
 
   }
@@ -2684,6 +3378,7 @@
     });
 
 </script>
+
 
 </body>
 </html>
